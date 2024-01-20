@@ -11,6 +11,15 @@ function getMovies() {
       topRatedApi,
       upComingApi,
     ]);
+
+    dispatch({
+      type: 'GET_MOVIES_SUCCESS',
+      payload: {
+        popularMovies: popularMovies.data,
+        topRatedMovies: topRatedMovies.data,
+        upcomingMovies: upcomingMovies.data,
+      },
+    });
     // console.log('popularMovies', popularMovies);
     // console.log('topRatedMovies', topRatedMovies);
     // console.log('upcomingMovies', upcomingMovies);
