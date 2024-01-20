@@ -2,15 +2,18 @@ import api from '../api';
 
 function getMovies() {
   return async (dispatch) => {
-    const popularMovieApi = await api.get(`/movie/popular`);
-    // let url = `https://api.themoviedb.org/3`;
-    // let response = await fetch(url)
-    // let data = await response.json()
+    const popularMovieApi = api.get(`/movie/popular`);
+    const topRatedApi = api.get(`/movie/top_rated`);
+    const upComingApi = api.get(`/movie/upcoming`);
 
-    // let url2 = `https://api.themoviedb.org/3/movie/top_rated
-    // `
-    // let url3 = `https://api.themoviedb.org/3/movie/top_rated
-    // `
+    let [popularMovies, topRatedMovies, upcomingMovies] = await Promise.all([
+      popularMovieApi,
+      topRatedApi,
+      upComingApi,
+    ]);
+    // console.log('popularMovies', popularMovies);
+    // console.log('topRatedMovies', topRatedMovies);
+    // console.log('upcomingMovies', upcomingMovies);
   };
 }
 
