@@ -13,6 +13,7 @@ body {
   height: 600px;
   display: flex;
   align-items: center;
+  background-size: cover;
 }
 
 .banner::before {
@@ -28,4 +29,10 @@ body {
   width: 40%;
   margin-left: 30px;
   z-index: 1;
+}
+
+.movie-card {
+  width: 300px;
+  height: 200px;
+  background-size: cover;
 }
